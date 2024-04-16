@@ -2,17 +2,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:responsi1/about.dart';
+import 'package:responsi1/stokobat.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MaterialApp(
+    title: 'Navigation Basics',
+    home: Homepage(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
+      body: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(10.0),
           child: AppBar(
@@ -77,7 +84,14 @@ class MyApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Stokobat(),
+                            ),
+                          );
+                        },
                         style: ButtonStyle(
                           shape: MaterialStatePropertyAll(
                             RoundedRectangleBorder(
@@ -138,6 +152,12 @@ class MyApp extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {
                           // Logika ketika tombol ditekan
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => About(),
+                            ),
+                          );
                         },
                         style: ButtonStyle(
                           shape:
