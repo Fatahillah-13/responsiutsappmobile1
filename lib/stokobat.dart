@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:responsi1/detail.dart';
 
 class Stokobat extends StatelessWidget {
   const Stokobat({super.key});
@@ -71,7 +72,14 @@ class Stokobat extends StatelessWidget {
                                 width: 150,
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Detailobat(),
+                                    ),
+                                  );
+                                },
                                 icon: Icon(Icons.more_vert),
                               ),
                             ],
@@ -87,36 +95,44 @@ class Stokobat extends StatelessWidget {
                         ),
                         Column(
                           children: [
+                            Image.asset(
+                              'assets/stetoskop.png',
+                              width: 100,
+                              height: 200,
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
                             Text(
-                              'Fatah Apotik',
-                              style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              'Harga : 54000',
                               textAlign: TextAlign.start,
                             ),
                             Text(
-                              'A12.2020.06454',
+                              'Jumlah : 50 Tablet',
                               textAlign: TextAlign.start,
                             ),
                             Text(
-                              'Menjual Berbagai Jenis Obat',
+                              'Exp : ',
                               textAlign: TextAlign.start,
                             ),
                           ],
                         ),
                         SizedBox(
-                          width: 70,
-                          height: 20,
+                          width: 20,
                         ),
-                        Column(
-                          children: [
-                            Image.asset(
-                              'assets/logo.png',
-                              width: 100,
-                              height: 200,
-                            ),
-                          ],
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(' Tambah\nStok Obat'), // Teks
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -124,7 +140,17 @@ class Stokobat extends StatelessWidget {
                 ),
               ),
             ),
-            Container(),
+            Container(
+              alignment: Alignment.bottomCenter,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Column(
+                  children: [
+                    Text('TAMBAH DATA OBAT'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
